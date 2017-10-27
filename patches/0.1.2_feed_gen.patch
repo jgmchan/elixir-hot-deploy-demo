@@ -1,0 +1,39 @@
+diff --git a/apps/demo_web/lib/demo_web/feed_with_gen_server.ex b/apps/demo_web/lib/demo_web/feed_with_gen_server.ex
+index 6de872a..a1cb2e4 100644
+--- a/apps/demo_web/lib/demo_web/feed_with_gen_server.ex
++++ b/apps/demo_web/lib/demo_web/feed_with_gen_server.ex
+@@ -18,7 +18,7 @@ defmodule DemoWeb.FeedWithGenServer do
+   end
+ 
+   def handle_info(:work, state) do
+-    new_count = state.count + 1
++    new_count = state.count + 100
+ 
+     DemoWeb.Web.Endpoint.broadcast(
+       @topic,
+diff --git a/apps/demo_web/mix.exs b/apps/demo_web/mix.exs
+index edbad6a..bc88836 100644
+--- a/apps/demo_web/mix.exs
++++ b/apps/demo_web/mix.exs
+@@ -3,7 +3,7 @@ defmodule DemoWeb.Mixfile do
+ 
+   def project do
+     [app: :demo_web,
+-     version: "0.0.2",
++     version: "0.0.3",
+      build_path: "../../_build",
+      config_path: "../../config/config.exs",
+      deps_path: "../../deps",
+diff --git a/rel/config.exs b/rel/config.exs
+index a07b2d7..12c0524 100644
+--- a/rel/config.exs
++++ b/rel/config.exs
+@@ -45,7 +45,7 @@ end
+ # will be used by default
+ 
+ release :hot_deploy_demo do
+-  set version: "0.1.1"
++  set version: "0.1.2"
+   set applications: [
+     :runtime_tools,
+     demo_web: :permanent
