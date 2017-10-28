@@ -8,10 +8,10 @@ It contains:
 * A script that changes the source project and builds a few releases used
   for demoing hot upgrades.
 
-  `0.1.0` - The first version of the application
-  `0.1.1` - `DemoWeb.Feed` increments by 100 instead of 1
-  `0.1.2` - `DemoWeb.FeedWithGenServer` increments by 100 instead of 1
-  `0.1.3` - Intercept the `FEED` messages and add `foo: "bar"` to message
+  * `0.1.0` - The first version of the application
+  * `0.1.1` - `DemoWeb.Feed` increments by 100 instead of 1
+  * `0.1.2` - `DemoWeb.FeedWithGenServer` increments by 100 instead of 1
+  * `0.1.3` - Intercept the `FEED` messages and add `foo: "bar"` to message
 
 # Dependencies
 
