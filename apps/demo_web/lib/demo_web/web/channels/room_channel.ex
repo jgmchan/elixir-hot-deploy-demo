@@ -2,7 +2,7 @@ defmodule DemoWeb.Web.RoomChannel do
   use Phoenix.Channel
 
   def join("room:" <> room, message, socket) do
-    reply = %{body: "Welcom to the #{String.capitalize(room)} channel",
+    reply = %{body: "Welcome to the #{String.capitalize(room)} channel",
               session: :rand.uniform(10)}
     {:ok, reply, socket}
   end
