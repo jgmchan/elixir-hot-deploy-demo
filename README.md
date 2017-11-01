@@ -47,8 +47,15 @@ It contains:
    ```
 
 # Connect to websocket
+You can connect to the topic with `ws` and see the counter incrementing with the following commands:
 ```
 ws ws://localhost:7000/socket/websocket
 > {"topic":"room:feed","event":"phx_join","payload":{},"ref":1}
 > {"topic":"room:feed_gen","event":"phx_join","payload":{},"ref":1}
-``````
+```
+
+# Demos
+
+## Upgrading to version 0.1.1
+[![asciicast](https://asciinema.org/a/0npddfmYVcPYR8N52ADmuCrKM.png)](https://asciinema.org/a/0npddfmYVcPYR8N52ADmuCrKM)
+
