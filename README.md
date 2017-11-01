@@ -59,3 +59,8 @@ ws ws://localhost:7000/socket/websocket
 ## Upgrading to version 0.1.1
 [![asciicast](https://asciinema.org/a/0npddfmYVcPYR8N52ADmuCrKM.png)](https://asciinema.org/a/0npddfmYVcPYR8N52ADmuCrKM)
 
+## Upgrading to version 0.1.2
+[![asciicast](https://asciinema.org/a/AzycbEQbF0tmFvbrz2sGWqzdh.png)](https://asciinema.org/a/AzycbEQbF0tmFvbrz2sGWqzdh)
+
+## Upgrading to version 0.1.3
+[![asciicast](https://asciinema.org/a/6wP3YQM8JEA23wTezNyNR6tup.png)](https://asciinema.org/a/6wP3YQM8JEA23wTezNyNR6tup)
