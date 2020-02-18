@@ -21,10 +21,9 @@ defmodule DemoWeb.Feed do
     DemoWeb.Web.Endpoint.broadcast(
       topic,
       "FEED",
-      %{timestamp: DateTime.utc_now,
-        pid: inspect(self()),
-        count: count}
+      %{timestamp: DateTime.utc_now(), pid: inspect(self()), count: count}
     )
+
     :timer.sleep(1 * 1000)
     output(topic, count + 1)
   end

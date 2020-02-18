@@ -4,7 +4,7 @@ release:
 		"cd /api && \
 		mix deps.get && \
 		MIX_ENV=prod mix compile && \
-		MIX_ENV=prod mix release --verbose --env prod"
+		MIX_ENV=prod mix distillery.release --verbose --env prod"
 
 release_upgrade:
 	# Check for version bump
@@ -13,4 +13,4 @@ release_upgrade:
 		"cd /api && \
 		mix deps.get && \
 		MIX_ENV=prod mix compile && \
-		MIX_ENV=prod mix release --verbose --env prod --upgrade"
+		MIX_ENV=prod mix distillery.release --verbose --env prod --upgrade"
