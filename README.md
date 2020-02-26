@@ -26,6 +26,7 @@ It contains:
 * Docker (To build the releases)
 * Vagrant (For a VM to run the released application)
 * [ws](https://github.com/hashrocket/ws) (Or whatever websocket client you like)
+* Erlang or [Elixir](https://elixir-lang.org/install.html#distributions) (required *ONLY* if you want to connect a local instance to the demo server for observability, otherwise just ignore)
 
 # Instructions
 
@@ -54,13 +55,39 @@ ws ws://localhost:7000/socket/websocket
 > {"topic":"room:feed_gen","event":"phx_join","payload":{},"ref":1}
 ```
 
+# Observing the demo server inside the VM
+You can spin up a local erlang node and join with the demo server inside vagrant to form a cluster.
+Once connected you can use `:observer` to start up an observer session to look at all the internal
+information for the demo server.
+
+See https://gist.github.com/pnc/9e957e17d4f9c6c81294 for more details
+
+1. Set up some port forwards from your vagrant machine so your local
+   instance can talk to the instance inside the VM.
+
+    ```
+    vagrant ssh -- -L9000:localhost:9000 -L4369:localhost:4369
+    ```
+
+    Port 4369 is the EPMD port (See https://erlang.org/doc/man/epmd.html for more details)
+    Port 9000 is the port the erlang VM inside vagrant will be listening for other nodes to connect
+
+2. Spin up a local erlang instance which will then start up an observer
+
+    ```
+    erl -name debug@127.0.0.1 -setcookie 'super-secret-cookie' -hidden -run observer
+    ```
+
+3. To look at the stats and process for the demo server, click `Nodes` and then `hot_deploy_demo@127.0.0.1`.
+   The observer should now show the metrics and process for the demo server.
+
 # Demos
 
-## Upgrading to version 0.1.1
+## Upgrading to version 0.1.1 (Old)
 [![asciicast](https://asciinema.org/a/0npddfmYVcPYR8N52ADmuCrKM.png)](https://asciinema.org/a/0npddfmYVcPYR8N52ADmuCrKM)
 
-## Upgrading to version 0.1.2
+## Upgrading to version 0.1.2 (Old)
 [![asciicast](https://asciinema.org/a/AzycbEQbF0tmFvbrz2sGWqzdh.png)](https://asciinema.org/a/AzycbEQbF0tmFvbrz2sGWqzdh)
 
-## Upgrading to version 0.1.3
+## Upgrading to version 0.1.3 (Old)
 [![asciicast](https://asciinema.org/a/6wP3YQM8JEA23wTezNyNR6tup.png)](https://asciinema.org/a/6wP3YQM8JEA23wTezNyNR6tup)

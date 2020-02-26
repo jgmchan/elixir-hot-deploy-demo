@@ -19,13 +19,12 @@ defmodule DemoWeb.FeedWithGenServer do
 
   def handle_info(:work, state) do
     new_count = state.count + 1
+    message = "Sydney DevOOps!"
 
     DemoWeb.Web.Endpoint.broadcast(
       @topic,
       "FEED_GEN",
-      %{timestamp: DateTime.utc_now,
-        pid: inspect(self()),
-        count: new_count}
+      %{pid: inspect(self()), message: "#{message} - count #{new_count}"}
     )
 
     schedule_work()
@@ -37,4 +36,3 @@ defmodule DemoWeb.FeedWithGenServer do
     Process.send_after(self(), :work, 1 * 1000)
   end
 end
-

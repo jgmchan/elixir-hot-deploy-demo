@@ -2,12 +2,14 @@ diff --git a/apps/demo_web/lib/demo_web/feed_with_gen_server.ex b/apps/demo_web/
 index 6de872a..a1cb2e4 100644
 --- a/apps/demo_web/lib/demo_web/feed_with_gen_server.ex
 +++ b/apps/demo_web/lib/demo_web/feed_with_gen_server.ex
-@@ -18,7 +18,7 @@ defmodule DemoWeb.FeedWithGenServer do
+@@ -18,8 +18,8 @@ defmodule DemoWeb.FeedWithGenServer do
    end
 
    def handle_info(:work, state) do
 -    new_count = state.count + 1
+-    message = "Sydney DevOOps!"
 +    new_count = state.count + 100
++    message = "HELLO Sydney DevOps!"
 
      DemoWeb.Web.Endpoint.broadcast(
        @topic,

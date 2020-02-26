@@ -1,5 +1,8 @@
 #!/bin/bash
-set -e
+set -xe
+
+find . -name '*.orig' -exec rm {} \;
+find . -name '*.rej' -exec rm {} \;
 
 # Make initial release (0.1.0)
 make release
