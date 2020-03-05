@@ -21,6 +21,8 @@ It contains:
 * `deploy.sh` - Deploys the initial release inside a vagrant machine
 * `hot_deploy.sh` - Hot deploys the upgrade releases inside a vagrant machine
 
+![Overview](images/Demo.jpg)
+
 # Dependencies
 
 * Docker (To build the releases)
@@ -80,6 +82,10 @@ See https://gist.github.com/pnc/9e957e17d4f9c6c81294 for more details
 
 3. To look at the stats and process for the demo server, click `Nodes` and then `hot_deploy_demo@127.0.0.1`.
    The observer should now show the metrics and process for the demo server.
+
+Here is an overview of what this is doing:
+![Overview](images/observer_tunnel.jpg)
+
 
 # Demos
 
